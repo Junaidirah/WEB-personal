@@ -1,0 +1,433 @@
+:root {
+  --background: #004aad;
+  --font: #ffffff;
+  --fot: #00000000;
+  --hov: #0097b2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background);
+  min-height: 100vh;
+  color: var(--font);
+  font-family: "Courier Prime", monospace;
+}
+/* navigation bar */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 7%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: var(--font);
+  border-radius: 0 0 25px 25px;
+  box-shadow: 1px 1px black;
+}
+
+.logo a {
+  color: black;
+  font-weight: 700;
+  /* font-style: italic; */
+  font-size: 2rem;
+  padding-left: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo a span {
+  color: var(--background);
+}
+.navigation-menu {
+  margin-left: 350px;
+  border-bottom: #000000;
+}
+.navigation-menu a {
+  padding: 6px 15px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+}
+.navigation-menu a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--hov);
+  color: var(--hov);
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0); /* Mulai dengan panjang nol */
+  transform-origin: center; /* Mengatur titik asal transformasi */
+  transition: transform 0.3s ease-in-out; /* Efek animasi */
+}
+
+.navigation-menu a:hover::before {
+  transform: scaleX(1); /* Memperluas elemen pseudo saat diarahkan */
+}
+.navigation-menu a:hover {
+  color: #004aad;
+}
+
+/* extra navigation */
+#hamenu {
+  color: #000000;
+  display: none;
+}
+/* Landing page*/
+.landing {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%;
+  color: #000000;
+}
+
+.landing-name h2 {
+  font-weight: 600;
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.landing-name p {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+}
+.landing-name p span {
+  color: #000000;
+  font-size: 18px;
+  text-shadow: 0.9px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.landing .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+.btn-box-1 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  /* background: var(--hov); */
+  border: 2px solid #000203;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+}
+
+.btn-box-1:nth-child(2) {
+  background: transparent;
+  color: #f0f0f0;
+}
+
+.btn-box-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #000000;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.btn-box-1:hover::before {
+  width: 100%;
+}
+
+/* Change text color on hover */
+.btn-box-1:hover {
+  color: transparent; /* Hide the text when hovered */
+}
+
+/* Create text color animation */
+.btn-box-1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #000101;
+  color: #ffffff;
+  z-index: 2;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide the overflowing text */
+}
+
+.btn-box-1:hover::after {
+  background: #000000; /* Change the background color of the text animation when hovered */
+  width: 100%; /* Animate to full width */
+}
+
+.profile {
+  display: flex;
+  height: auto;
+  aspect-ratio: 2/1;
+  justify-content: space-around;
+}
+
+.profile img {
+  box-shadow: 1px 2px #ffffff;
+  border-radius: 20px 10px;
+}
+/* Landing page*/
+/* about me! */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Jarak antara elemen-elemen dalam flex container */
+  padding: 50px; /* Padding tambahan untuk tampilan yang lebih baik */
+  margin-top: 20px;
+}
+.title {
+  position: absolute;
+  align-items: center;
+  color: #ffffff;
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  right: 50%;
+  top: 100%;
+}
+.about-me {
+  flex: 2;
+}
+
+.about-me p {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.profile-1 {
+  flex: 1;
+  text-align: center;
+}
+.profile-1 img {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  align-items: flex-start;
+  /* position: absolute; */
+  box-shadow: 1px 2px #ffffff;
+  border-radius: 20px 10px;
+}
+/* skills */
+.skills {
+  background-color: white;
+  display: flex;
+  color: #000000;
+  /* align-items: center; */
+  flex-direction: column;
+  /* align-content: center; */
+}
+
+.skills .skills-1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.skills .skills-1 h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.skills .skills-1 span {
+  color: #004aad;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  float: left;
+  width: 25%;
+  padding: 6px 175px;
+  margin-top: 20px;
+}
+
+.row {
+  margin: 0 -5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #ffffff84;
+  border-radius: 25px;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.5s;
+}
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9vh;
+  background-color: #000000;
+}
+
+.footer-1 {
+  text-align: center;
+}
+
+.icon2 {
+  margin-top: 20px;
+}
+
+.icon2 a {
+  margin: 0 10px;
+  color: #ffffff;
+}
+.icon2 a:hover {
+  color: #004aad;
+}
+
+/* media queries */
+/* laptop */
+@media (max-width: 1336px) {
+  html {
+    font-size: 50%;
+  }
+
+  .navigation {
+    padding: 1.3rem 5%;
+    text-align: center;
+  }
+
+  .logo a {
+    font-size: 5rem;
+    padding-left: 0;
+  }
+
+  .navigation-menu {
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .navigation-menu a {
+    margin: 5px 0;
+  }
+
+  .row {
+    width: 50%;
+    padding: 0;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    padding: 1.3rem 5%;
+    text-align: center;
+  }
+
+  .logo a {
+    font-size: 5rem;
+    padding-left: 0;
+  }
+
+  .navigation-menu {
+    margin-top: 10px;
+    flex-direction: column;
+    position: absolute;
+  }
+
+  .navigation-menu {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    background-color: #f6f6f6;
+    width: 100%;
+    height: auto;
+  }
+  .navigation-menu .active {
+    right: 0;
+  }
+
+  .row {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* HP */
+@media (max-width: 450px) {
+  html {
+    font-size: 33.3%;
+  }
+
+  .logo a {
+    font-size: 6rem;
+  }
+
+  .navigation {
+    padding: 1.3rem 5%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    order: 2;
+  }
+
+  .navigation-menu {
+    order: 1;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .navigation-menu a {
+    margin: 5px 0;
+  }
+
+  .navigation-hide {
+    order: 3;
+    visibility: visible;
+  }
+
+  .row {
+    width: 100%;
+    padding: 0;
+  }
+}
